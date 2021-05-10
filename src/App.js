@@ -1,19 +1,42 @@
-import { Component } from 'react';
+import { Suspense, lazy } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Container from './components/Container';
+import AppBar from './components/AppBar';
+import Loader from './components/Loader';
 
-import styles from './App.module.scss';
+import routes from './routes';
 
-class App extends Component {
- 
+const HomePage = lazy(() =>
+  import('./pages/HomePage' /* webpackChunkName: "home-page" */),
+);
+const MoviesPage = lazy(() =>
+  import('./pages/MoviesPage' /* webpackChunkName: "movies-page" */),
+);
+const MovieDetailsPage = lazy(() =>
+  import(
+    './pages/MovieDetailsPage' /* webpackChunkName: "movie-details-page" */
+  ),
+);
+const PageNotFound = lazy(() =>
+  import('./pages/PageNotFound' /* webpackChunkName: "404-page" */),
+);
 
-  render() {
+const App = () => (
+  <>
+    <AppBar />
 
-    return (
-      <Container>
-        <h1>qwe</h1>
-      </Container>
-    );
-  }
-}
+    <Container>
+      {/* Роутинг приложения */}
+      <Suspense fallback={<Loader />}>
+        <Switch>
+          <Route exact path={routes.home} component={HomePage} />
+          <Route exact path={routes.movies} component={MoviesPage} />
+          <Route path={routes.movieDetails} component={MovieDetailsPage} />
+          <Route component={PageNotFound} />
+        </Switch>
+      </Suspense>
+    </Container>
+  </>
+);
 
 export default App;
