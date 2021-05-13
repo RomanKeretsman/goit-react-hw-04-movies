@@ -3,6 +3,8 @@ import MovieList from '../../components/MovieList';
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
 import api from '../../services/moviesApi';
+import styles from './HomePage.module.scss'
+
 
 class HomePage extends Component {
   state = {
@@ -38,7 +40,7 @@ class HomePage extends Component {
     const { trends, isLoading } = this.state;
 
     return (
-      <main>
+      <main className={styles.main}>
         {trends ? (
           <MovieList movies={trends} />
         ) : (

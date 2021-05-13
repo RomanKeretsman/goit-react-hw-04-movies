@@ -60,7 +60,7 @@ class Cast extends Component {
             })}
           </ul>
         ) : (
-          <p>There is no information about actors for this movie.</p>
+          <p className={styles.castError}>There is no information about actors for this movie.</p>
         )}
       </div>
     );

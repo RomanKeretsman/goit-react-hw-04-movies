@@ -4,9 +4,10 @@
 .thumb {
   height: 300px;
   margin-bottom: 5px;
+  color: white;
 
-  opacity: 1;
-  transition: opacity $transition-duration $transition-timing;
+  transform: scale(1);
+  transition: all $transition-duration $transition-timing;
 
   @media screen and (min-width: 768px) {
     height: 250px;
@@ -14,8 +15,8 @@
 
   &:hover,
   &:focus {
-    opacity: 0.8;
-    transition: opacity $transition-duration $transition-timing;
+    transform: scale(1.05);
+    transition: all $transition-duration $transition-timing;
     cursor: pointer;
   }
 
@@ -36,4 +37,8 @@
 
 .name {
   margin-bottom: 5px;
+  color: rgb(204, 199, 199);
+}
+.character {
+  color: rgb(136, 135, 135);
 }

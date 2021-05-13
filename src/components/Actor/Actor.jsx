@@ -15,8 +15,8 @@ const Actor = ({ photo, name, character }) => {
       </div>
       <p className={styles.name}>{name}</p>
       <p>
-        <span>Character: </span>
-        <b>{character}</b>
+        <span className={styles.character}>Character: {character}</span>
+        {/* <b>{character}</b> */}
       </p>
     </div>
   );

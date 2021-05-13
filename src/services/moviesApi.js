@@ -68,11 +68,12 @@ const fetchReviews = async id => {
     console.error('Smth wrong with fetch reviews in api', error);
   }
 };
-
-export default {
+const api = {
   fetchTrends,
   fetchMoviesBySearch,
   fetchMovieById,
   fetchCast,
   fetchReviews,
 };
+
+export default api;

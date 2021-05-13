@@ -17,8 +17,8 @@ const MovieDetailsPage = lazy(() =>
     './pages/MovieDetailsPage' /* webpackChunkName: "movie-details-page" */
   ),
 );
-const PageNotFound = lazy(() =>
-  import('./pages/PageNotFound' /* webpackChunkName: "404-page" */),
+const NotFoundPage = lazy(() =>
+  import('./pages/NotFoundPage' /* webpackChunkName: "404-page" */),
 );
 
 const App = () => (
@@ -32,7 +32,7 @@ const App = () => (
           <Route exact path={routes.home} component={HomePage} />
           <Route exact path={routes.movies} component={MoviesPage} />
           <Route path={routes.movieDetails} component={MovieDetailsPage} />
-          <Route component={PageNotFound} />
+          <Route component={NotFoundPage} />
         </Switch>
       </Suspense>
     </Container>

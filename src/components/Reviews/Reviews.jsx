@@ -55,7 +55,7 @@ class Reviews extends Component {
             })}
           </ul>
         ) : (
-          <p>We don't have any reviews for this movie</p>
+          <p className={styles.revError}>We don't have any reviews for this movie</p>
         )}
       </div>
     );

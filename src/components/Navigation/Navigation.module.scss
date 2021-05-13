@@ -1,0 +1,57 @@
+// Стили главной навигации
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0px auto;
+  padding: 0px 15px;
+  max-width: 1170px;
+ 
+}
+
+.list {
+  display: flex;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.link {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  color: currentColor;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &--active {
+    color: yellow;
+    font-weight: 500;
+
+    text-decoration: none;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  cursor: default;
+  color: white;
+  letter-spacing: 5px;
+  
+}
+.text {
+  color: yellow;
+  
+}
